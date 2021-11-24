@@ -12,13 +12,12 @@ class WatchListSerializer(serializers.ModelSerializer):
         # exclude = ['name']
 
 
-class StreamPlatformSerializer(serializers.ModelSerializer):
-    # watchlist = WatchListSerializer(many=True, read_only=True)
+# class StreamPlatformSerializer(serializers.ModelSerializer):
+class StreamPlatformSerializer(serializers.HyperlinkedModelSerializer):
+    watchlist = WatchListSerializer(many=True, read_only=True)
     # watchlist = serializers.StringRelatedField(many=True, read_only=True)
     # watchlist = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
-    watchlist = serializers.HyperlinkedRelatedField(
-        many=True, read_only=True, view_name='movie_details'
-    )
+    # watchlist = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='movie_details')
 
     class Meta:
         model = StreamPlatform
