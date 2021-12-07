@@ -3,7 +3,8 @@ from rest_framework.response import Response
 #from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from watchlist_app.models import WatchList, StreamPlatform, Review
-from watchlist_app.api.serializers import WatchListSerializer, StreamPlatformSerializer, ReviewSerializer
+from watchlist_app.api.serializers import (WatchListSerializer, StreamPlatformSerializer, 
+                                           ReviewSerializer)
 
 
 class ReviewDetail(mixins.RetrieveModelMixin, generics.GenericAPIView):
